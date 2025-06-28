@@ -10,7 +10,7 @@ int main()
 {
   // Important initialization variables:
   unsigned char times{0u}, loop1{1u}, loop2{0u};
-  int hoan{14}; // HOAN is an abreviation to Houses Of A Number.
+  signed int hoan{14}; // HOAN is an abreviation to Houses Of A Number.
   std::string choose1, choose2;
   long double n1;
 
@@ -21,12 +21,11 @@ int main()
   while(loop1)
   {
     CppUtils::Terminal::clear_terminal();
-    std::cout << base_terminal_bold << std::flush;
     std::cout << "What type of convertion do you want to do?" << std::endl;
-    std::cout << red_color << "<<< [0] Options >>>" << base_terminal_bold << std::endl;
-    std::cout << "[1] Celsius" << std::endl;
-    std::cout << "[2] Fahrenheit" << std::endl;
-    std::cout << "[3] Kelvin" << std::endl;
+    std::cout << red_color << "<<< [ 0 ] Options >>>" << base_terminal << std::endl;
+    std::cout << "[ 1 ] Celsius" << std::endl;
+    std::cout << "[ 2 ] Fahrenheit" << std::endl;
+    std::cout << "[ 3 ] Kelvin" << std::endl;
     std::cin >> std::ws, choose1;
     CppUtils::Terminal::clear_terminal();
 
@@ -38,11 +37,10 @@ int main()
       // Looped code:
       while(loop2)
       {
-        std::cout << red_color << "[0] Main menu" << base_terminal_bold << std::endl;
-        std::cout << "[1] Exit" << std::endl;
-        std::cout << "[2] Choose how much houses will apear into a number (integers and decimals)" << std::endl;
+        std::cout << red_color << "[ 0 ] Main menu" << base_terminal_bold << std::endl;
+        std::cout << "[ 1 ] Exit" << std::endl;
+        std::cout << "[ 2 ] Choose how much houses will apear into a number (integers and decimals)" << std::endl;
         std::cin >> std::ws, choose2;
-        CppUtils::Terminal::clear_terminal();
 
         if(choose2 == "0")
         {
@@ -52,6 +50,7 @@ int main()
         else if(choose2 == "1")
         {
           --loop2;
+          CppUtils::Terminal::clear_terminal();
         }
 
         else if(choose2 == "2")
@@ -60,26 +59,6 @@ int main()
           std::cin >> std::ws, hoan;
           std::cout << std::setprecision(hoan) << std::flush;
           CppUtils::Terminal::clear_terminal();
-          ++loop1, --loop2;
-        }
-
-        else
-        {
-          std::cout << red_color << "ERROR" << std::flush;
-          std::this_thread::sleep_for(std::chrono::seconds(1));
-
-          for(times = 0; times < 3; ++times)
-          {
-            std::cout << "." << std::flush;
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-          }
-
-          std::cout << base_terminal_bold << std::endl;
-          CppUtils::Terminal::clear_terminal();
-
-          std::cout << "Press any key to continue..." << std::flush;
-          std::cin.ignore(), std::cin.get();
-          ++loop1, --loop2;
         }
       }
     }
@@ -98,10 +77,7 @@ int main()
         std::cin >> std::ws, choose2;
         CppUtils::Terminal::clear_terminal();
 
-        if(choose2 == "0")
-        {
-          ++loop1, --loop2;
-        }
+        if(choose2 == "0");
 
         else if(choose2 == "1")
         {
@@ -110,7 +86,6 @@ int main()
           std::cout << "Result: " << n1 * 1.8L + 32 << " F" << std::endl;
           std::cout << "Press any key to continue..." << std::flush;
           std::cin.ignore(), std::cin.get();
-          ++loop1, --loop2;
         }
 
         else if(choose2 == "2")
@@ -120,27 +95,9 @@ int main()
           std::cout << "Result: " << n1 + 273.15L << " K" << std::endl;
           std::cout << "Press any key to continue..." << std::flush;
           std::cin.ignore(), std::cin.get();
-          ++loop1, --loop2;
         }
 
-        else
-        {
-          std::cout << red_color << "ERROR" << std::flush;
-          std::this_thread::sleep_for(std::chrono::seconds(1));
-
-          for(times = 0; times < 3; ++times)
-          {
-            std::cout << "." << std::flush;
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-          }
-
-          std::cout << base_terminal_bold << std::endl;
-          CppUtils::Terminal::clear_terminal();
-
-          std::cout << "Press any key to continue..." << std::flush;
-          std::cin.ignore(), std::cin.get();
-          ++loop1, --loop2;
-        }
+        ++loop1, --loop2;
       }
     }
 
@@ -158,10 +115,7 @@ int main()
         std::cin >> std::ws, choose2;
         CppUtils::Terminal::clear_terminal();
 
-        if(choose2 == "0")
-        {
-          ++loop1, --loop2;
-        }
+        if(choose2 == "0");
 
         else if(choose2 == "1")
         {
@@ -170,7 +124,6 @@ int main()
           std::cout << "Result: " << (n1 - 32) / 1.8L << " C" << std::endl;
           std::cout << "Press any key to continue..." << std::flush;
           std::cin.ignore(), std::cin.get();
-          ++loop1, --loop2;
         }
 
         else if(choose2 == "2")
@@ -180,27 +133,9 @@ int main()
           std::cout << "Result: " << (n1 - 32) * 1.8L + 273.15L << " K" << std::endl;
           std::cout << "Press any key to continue..." << std::flush;
           std::cin.ignore(), std::cin.get();
-          ++loop1, --loop2;
         }
 
-        else
-        {
-          std::cout << red_color << "ERROR" << std::flush;
-          std::this_thread::sleep_for(std::chrono::seconds(1));
-
-          for(times = 0; times < 3; ++times)
-          {
-            std::cout << "." << std::flush;
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-          }
-
-          std::cout << base_terminal_bold << std::endl;
-          CppUtils::Terminal::clear_terminal();
-
-          std::cout << "Press any key to continue..." << std::flush;
-          std::cin.ignore(), std::cin.get();
-          ++loop1, --loop2;
-        }
+        ++loop1, --loop2;
       }
     }
 
@@ -218,10 +153,7 @@ int main()
         std::cin >> std::ws, choose2;
         CppUtils::Terminal::clear_terminal();
 
-        if(choose2 == "0")
-        {
-          ++loop1, --loop2;
-        }
+        if(choose2 == "0");
 
         else if(choose2 == "1")
         {
@@ -230,7 +162,6 @@ int main()
           std::cout << "Result: " << n1 - 273.15L << " C" << std::endl;
           std::cout << "Press any key to continue..." << std::flush;
           std::cin.ignore(), std::cin.get();
-          ++loop1, --loop2;
         }
 
         else if(choose2 == "2")
@@ -240,46 +171,10 @@ int main()
           std::cout << "Result: " << (n1 - 273.15L) * 1.8L + 32 << " F" << std::endl;
           std::cout << "Press any key to continue..." << std::flush;
           std::cin.ignore(), std::cin.get();
-          ++loop1, --loop2;
         }
 
-        else
-        {
-          std::cout << red_color << "ERROR" << std::flush;
-          std::this_thread::sleep_for(std::chrono::seconds(1));
-
-          for(times = 0; times < 3; ++times)
-          {
-            std::cout << "." << std::flush;
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-          }
-
-          std::cout << base_terminal_bold << std::endl;
-          CppUtils::Terminal::clear_terminal();
-
-          std::cout << "Press any key to continue..." << std::flush;
-          std::cin.ignore(), std::cin.get();
-          ++loop1, --loop2;
-        }
+        ++loop1, --loop2;
       }
-    }
-
-    else
-    {
-      std::cout << red_color << "ERROR" << std::flush;
-      std::this_thread::sleep_for(std::chrono::seconds(1));
-
-      for(times = 0; times < 3; ++times)
-      {
-        std::cout << "." << std::flush;
-        std::this_thread::sleep_for(std::chrono::seconds(1));
-      }
-
-      std::cout << base_terminal_bold << std::endl;
-      CppUtils::Terminal::clear_terminal();
-
-      std::cout << "Press any key to continue..." << std::flush;
-      std::cin.ignore(), std::cin.get();
     }
   }
 
