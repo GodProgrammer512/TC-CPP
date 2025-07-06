@@ -83,7 +83,7 @@ int main()
         {
           std::cout << "Write a Celsius number to convert it to a Fahrenheit number: " << std::flush;
           std::cin >> std::ws, n1;
-          std::cout << "Result: " << n1 * 1.8L + 32 << " F" << std::endl;
+          std::cout << "Result: " << n1 * 1.8L + 32.0L << " F" << std::endl;
           std::cout << "Press any key to continue..." << std::flush;
           std::cin.ignore(), std::cin.get();
         }
@@ -121,7 +121,7 @@ int main()
         {
           std::cout << "Write a Fahrenheit number to convert it to a Celsius number: " << std::flush;
           std::cin >> std::ws, n1;
-          std::cout << "Result: " << (n1 - 32) / 1.8L << " C" << std::endl;
+          std::cout << "Result: " << (n1 - 32.0L) / 1.8L << " C" << std::endl;
           std::cout << "Press any key to continue..." << std::flush;
           std::cin.ignore(), std::cin.get();
         }
@@ -130,7 +130,7 @@ int main()
         {
           std::cout << "Write a Fahrenheit number to convert it to a Kelvin number: " << std::flush;
           std::cin >> std::ws, n1;
-          std::cout << "Result: " << (n1 - 32) * 1.8L + 273.15L << " K" << std::endl;
+          std::cout << "Result: " << (n1 - 32.0L) * 1.8L + 273.15L << " K" << std::endl;
           std::cout << "Press any key to continue..." << std::flush;
           std::cin.ignore(), std::cin.get();
         }
@@ -168,7 +168,7 @@ int main()
         {
           std::cout << "Write a Kelvin number to convert it to a Fahrenheit number: " << std::flush;
           std::cin >> std::ws, n1;
-          std::cout << "Result: " << (n1 - 273.15L) * 1.8L + 32 << " F" << std::endl;
+          std::cout << "Result: " << (n1 - 273.15L) * 1.8L + 32.0L << " F" << std::endl;
           std::cout << "Press any key to continue..." << std::flush;
           std::cin.ignore(), std::cin.get();
         }
