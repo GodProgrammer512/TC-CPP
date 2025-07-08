@@ -22,7 +22,7 @@ int main()
   {
     CppUtils::Terminal::clear_terminal();
     std::cout << "What type of convertion do you want to do?" << std::endl;
-    std::cout << red_color << "<<< [ 0 ] Options >>>" << base_terminal << std::endl;
+    std::cout << red_color << "[ 0 ] Options..." << base_terminal << std::endl;
     std::cout << "[ 1 ] Celsius" << std::endl;
     std::cout << "[ 2 ] Fahrenheit" << std::endl;
     std::cout << "[ 3 ] Kelvin" << std::endl;
