@@ -1,32 +1,38 @@
-// Run just one time:
+/* Include guard: */
 #ifndef TEMP_CONVERT_C
 #define TEMP_CONVERT_C
 
-// Importations:
+/* Importations: */
+#define IMPORT_TERMINAL_COLORS
 #include <cutils.h>
 #include <iostream>
 #include <string>
 
 
-// Main code:
-int main(void)
+/* Main code: */
+int main()
 {
-	// Variables:
-	#define TC_CPP_VERSION "3.0.0" // Temperature Converter version variable.
-	signed char loop1 = 1;       // First loop variable.
-	signed int precision = 2;    // Precision of the numbers variable.
-	std::string option1;         // First option variable.
-	long double n1;              // First number variable.
+	/* Temperature Converter version variables: */
+	#define TEMPERATURE_CONVERTER_FULL_VERSION  301L /* Temperature Converter full version variable (3.0.1). */
+	#define TEMPERATURE_CONVERTER_MAJOR_VERSION 3L   /* Temperature Converter major version variable (3). */
+	#define TEMPERATURE_CONVERTER_MINOR_VERSION 0L   /* Temperature Converter minor version variable (0). */
+	#define TEMPERATURE_CONVERTER_PATCH_VERSION 1L   /* Temperature Converter patch version variable (1). */
 
-	// Enable Vitrual Terminal and use UTF-8:
+	/* Main variables: */
+	signed char loop1 = 1;    /* First loop variable. */
+	signed int precision = 2; /* Precision of the numbers variable. */
+	long double n1;           /* First number variable. */
+	std::string option1;      /* First option variable. */
+
+	/* Enable Vitrual Terminal and use UTF-8: */
 	enable_vt_and_utf8();
 
-	// Main loop:
+	/* Main loop: */
 	while(loop1 == 1)
 	{
-		clear_terminal();
+		CLEAR_TERMINAL();
 		puts("=========================================");
-		printf("====== TEMPERATURE CONVERTER %s ======\n", TC_CPP_VERSION);
+		printf("====== TEMPERATURE CONVERTER %.0Lf.%.0Lf.%.0Lf ======\n", TEMPERATURE_CONVERTER_MAJOR_VERSION, TEMPERATURE_CONVERTER_MINOR_VERSION, TEMPERATURE_CONVERTER_PATCH_VERSION);
 		puts("=========================================");
 		printf("  %s[ 0 ] Options...%s\n", RED_COLOR, BASE_TERMINAL);
 		puts("  [ 1 ] Celsius to...");
@@ -34,7 +40,7 @@ int main(void)
 		puts("  [ 3 ] Kelvin to...");
 		fputs("\t Your answer: ", stdout);
 		std::cin >> std::ws >> option1;
-		clear_terminal();
+		CLEAR_TERMINAL();
 
 		if(option1 == "0")
 		{
@@ -59,18 +65,18 @@ int main(void)
 
 				else if(option1 == "1")
 				{
-					loop1 = 0, clear_terminal();
+					loop1 = 0, CLEAR_TERMINAL();
 				}
 
 				else if(option1 == "2")
 				{
-					clear_terminal();
-					rrmf();
+					CLEAR_TERMINAL();
+					read_me();
 				}
 
 				else if(option1 == "3")
 				{
-					clear_terminal();
+					CLEAR_TERMINAL();
 					printf("Type the new value to the precision (base: 6, actual: %d, min: 0, max: 18): ", precision);
 					scanf("%d", &precision);
 
@@ -86,19 +92,19 @@ int main(void)
 
 					printf("New value: %d\n", precision);
 					petc();
-					clear_terminal();
+					CLEAR_TERMINAL();
 				}
 
 				else if(option1 == "3.14" || option1 == "3.1415" || option1 == "3.14159" || option1 == "3,14" || option1 == "3,1415" || option1 == "3,14159")
 				{
-					clear_terminal();
+					CLEAR_TERMINAL();
 					easter_egg_function();
-					clear_terminal();
+					CLEAR_TERMINAL();
 				}
 
 				else
 				{
-					clear_terminal();
+					CLEAR_TERMINAL();
 				}
 			}
 		}
@@ -122,7 +128,7 @@ int main(void)
 
 				else if(option1 == "1")
 				{
-					clear_terminal();
+					CLEAR_TERMINAL();
 					fputs("Type the number: ", stdout);
 					scanf("%Lf", &n1);
 					printf("Result: %.*Lf\n", precision, n1 * 1.8L + 32L);
@@ -132,7 +138,7 @@ int main(void)
 
 				else if(option1 == "2")
 				{
-					clear_terminal();
+					CLEAR_TERMINAL();
 					fputs("Type the number: ", stdout);
 					scanf("%Lf", &n1);
 					printf("Result: %.*Lf\n", precision, n1 + 273.15L);
@@ -142,7 +148,7 @@ int main(void)
 
 				else
 				{
-					clear_terminal();
+					CLEAR_TERMINAL();
 				}
 			}
 		}
@@ -166,7 +172,7 @@ int main(void)
 
 				else if(option1 == "1")
 				{
-					clear_terminal();
+					CLEAR_TERMINAL();
 					fputs("Type the number: ", stdout);
 					scanf("%Lf", &n1);
 					printf("Result: %.*Lf\n", precision, (n1 - 32.0L) / 1.8L);
@@ -176,7 +182,7 @@ int main(void)
 
 				else if(option1 == "2")
 				{
-					clear_terminal();
+					CLEAR_TERMINAL();
 					fputs("Type the number: ", stdout);
 					scanf("%Lf", &n1);
 					printf("Result: %.*Lf\n", precision, (n1 - 32.0L) * 5.0L / 9.0L + 273.15L);
@@ -186,7 +192,7 @@ int main(void)
 
 				else
 				{
-					clear_terminal();
+					CLEAR_TERMINAL();
 				}
 			}
 		}
@@ -210,7 +216,7 @@ int main(void)
 
 				else if(option1 == "1")
 				{
-					clear_terminal();
+					CLEAR_TERMINAL();
 					fputs("Type the number: ", stdout);
 					scanf("%Lf", &n1);
 					printf("Result: %.*Lf\n", precision, n1 - 273.15L);
@@ -220,7 +226,7 @@ int main(void)
 
 				else if(option1 == "2")
 				{
-					clear_terminal();
+					CLEAR_TERMINAL();
 					fputs("Type the number: ", stdout);
 					scanf("%Lf", &n1);
 					printf("Result: %.*Lf\n", precision, (n1 - 273.15L) * 1.8L + 32.0L);
@@ -230,7 +236,7 @@ int main(void)
 
 				else
 				{
-					clear_terminal();
+					CLEAR_TERMINAL();
 				}
 			}
 		}
