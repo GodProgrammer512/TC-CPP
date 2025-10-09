@@ -12,10 +12,10 @@
 int main()
 {
 	/* Temperature Converter version variables: */
-	#define TEMPERATURE_CONVERTER_FULL_VERSION  310.0L /* Temperature Converter full version variable (3.0.1). */
+	#define TEMPERATURE_CONVERTER_FULL_VERSION  310.0L /* Temperature Converter full version variable (3.1.0). */
 	#define TEMPERATURE_CONVERTER_MAJOR_VERSION 3.0L   /* Temperature Converter major version variable (3). */
-	#define TEMPERATURE_CONVERTER_MINOR_VERSION 1.0L   /* Temperature Converter minor version variable (0). */
-	#define TEMPERATURE_CONVERTER_PATCH_VERSION 0.0L   /* Temperature Converter patch version variable (1). */
+	#define TEMPERATURE_CONVERTER_MINOR_VERSION 1.0L   /* Temperature Converter minor version variable (1). */
+	#define TEMPERATURE_CONVERTER_PATCH_VERSION 0.0L   /* Temperature Converter patch version variable (0). */
 
 	/* Main variables: */
 	signed char loop1 = 1;                             /* First loop variable. */
