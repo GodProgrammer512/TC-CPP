@@ -1,6 +1,6 @@
 /* Include guard: */
-#ifndef TEMP_CONVERT_C
-#define TEMP_CONVERT_C
+#ifndef TEMPERATURE_CONVERT_CPP
+#define TEMPERATURE_CONVERT_CPP
 
 /* Importations: */
 #define IMPORT_TERMINAL_COLORS
@@ -19,9 +19,11 @@ int main()
 
 	/* Main variables: */
 	signed char loop1 = 1;                             /* First loop variable. */
-	signed int precision = 2;                          /* Precision of the numbers variable. */
+	signed int precision = 18;                          /* Precision of the numbers variable. */
 	long double n1;                                    /* First number variable. */
 	std::string option1;                               /* First option variable. */
+	std::string sprecision;														 /* Precision string variable. */
+	std::string sn1;                                   /* First number string variable. */
 
 	/* Enable Vitrual Terminal and use UTF-8: */
 	enable_vt_and_utf8();
@@ -77,7 +79,8 @@ int main()
 				{
 					CLEAR_TERMINAL();
 					printf("Type the new value to the precision (base: 6, actual: %d, min: 0, max: 18): ", precision);
-					scanf("%d", &precision);
+					std::cin >> std::ws >> sprecision;
+					precision = atoi(sprecision.c_str());
 
 					if(precision < 0)
 					{
@@ -129,7 +132,8 @@ int main()
 				{
 					CLEAR_TERMINAL();
 					fputs("Type the number: ", stdout);
-					scanf("%Lf", &n1);
+					std::cin >> std::ws >> sn1;
+					n1 = strtold(sn1.c_str(), NULL);
 					printf("Result: %.*Lf\n", precision, n1 * 1.8L + 32L);
 					petc();
 					--loop1;
@@ -139,7 +143,8 @@ int main()
 				{
 					CLEAR_TERMINAL();
 					fputs("Type the number: ", stdout);
-					scanf("%Lf", &n1);
+					std::cin >> std::ws >> sn1;
+					n1 = strtold(sn1.c_str(), NULL);
 					printf("Result: %.*Lf\n", precision, n1 + 273.15L);
 					petc();
 					--loop1;
@@ -173,7 +178,8 @@ int main()
 				{
 					CLEAR_TERMINAL();
 					fputs("Type the number: ", stdout);
-					scanf("%Lf", &n1);
+					std::cin >> std::ws >> sn1;
+					n1 = strtold(sn1.c_str(), NULL);
 					printf("Result: %.*Lf\n", precision, (n1 - 32.0L) / 1.8L);
 					petc();
 					--loop1;
@@ -183,7 +189,8 @@ int main()
 				{
 					CLEAR_TERMINAL();
 					fputs("Type the number: ", stdout);
-					scanf("%Lf", &n1);
+					std::cin >> std::ws >> sn1;
+					n1 = strtold(sn1.c_str(), NULL);
 					printf("Result: %.*Lf\n", precision, (n1 - 32.0L) * 5.0L / 9.0L + 273.15L);
 					petc();
 					--loop1;
@@ -217,7 +224,8 @@ int main()
 				{
 					CLEAR_TERMINAL();
 					fputs("Type the number: ", stdout);
-					scanf("%Lf", &n1);
+					std::cin >> std::ws >> sn1;
+					n1 = strtold(sn1.c_str(), NULL);
 					printf("Result: %.*Lf\n", precision, n1 - 273.15L);
 					petc();
 					--loop1;
@@ -227,7 +235,8 @@ int main()
 				{
 					CLEAR_TERMINAL();
 					fputs("Type the number: ", stdout);
-					scanf("%Lf", &n1);
+					std::cin >> std::ws >> sn1;
+					n1 = strtold(sn1.c_str(), NULL);
 					printf("Result: %.*Lf\n", precision, (n1 - 273.15L) * 1.8L + 32.0L);
 					petc();
 					--loop1;
