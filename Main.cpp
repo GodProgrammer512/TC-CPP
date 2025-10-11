@@ -4,6 +4,7 @@
 
 /* Importations: */
 #define IMPORT_TERMINAL_COLORS
+#define IMPORT_MATH_UTILS
 #include <cutils.h>
 #include <iostream>
 
@@ -12,18 +13,18 @@
 int main()
 {
 	/* Temperature Converter version variables: */
-	#define TEMPERATURE_CONVERTER_FULL_VERSION  310.0L /* Temperature Converter full version variable (3.1.0). */
-	#define TEMPERATURE_CONVERTER_MAJOR_VERSION 3.0L   /* Temperature Converter major version variable (3). */
-	#define TEMPERATURE_CONVERTER_MINOR_VERSION 1.0L   /* Temperature Converter minor version variable (1). */
-	#define TEMPERATURE_CONVERTER_PATCH_VERSION 0.0L   /* Temperature Converter patch version variable (0). */
+	#define TEMPERATURE_CONVERTER_FULL_VERSION  311.0L /* Temperature Converter full version variable (3.1.1). */
+	#define TEMPERATURE_CONVERTER_MAJOR_VERSION 3.0L   /* Temperature Converter major version variable (3).    */
+	#define TEMPERATURE_CONVERTER_MINOR_VERSION 1.0L   /* Temperature Converter minor version variable (1).    */
+	#define TEMPERATURE_CONVERTER_PATCH_VERSION 1.0L   /* Temperature Converter patch version variable (1).    */
 
 	/* Main variables: */
-	signed char loop1 = 1;                             /* First loop variable. */
-	signed int precision = 18;                         /* Precision of the numbers variable. */
-	long double n1;                                    /* First number variable. */
-	std::string option1;                               /* First option variable. */
-	std::string sprecision;														 /* Precision string variable. */
-	std::string sn1;                                   /* First number string variable. */
+	signed char loop1 = 1;                             /* First loop variable.                                 */
+	signed int precision = 18;                         /* Precision of the numbers variable.                   */
+	long double n1;                                    /* First number variable.                               */
+	std::string option1;                               /* First option variable.                               */
+	std::string sprecision;														 /* Precision string variable.                           */
+	std::string sn1;                                   /* First number string variable.                        */
 
 	/* Enable Vitrual Terminal and use UTF-8: */
 	enable_vt_and_utf8();
@@ -134,7 +135,7 @@ int main()
 					fputs("Type the number: ", stdout);
 					std::cin >> std::ws >> sn1;
 					n1 = strtold(sn1.c_str(), NULL);
-					printf("Result: %.*Lf\n", precision, n1 * 1.8L + 32L);
+					printf("Result: %.*Lf\n", precision, CELSIUS_TO_FAHRENHEIT_L(n1));
 					petc();
 					--loop1;
 				}
@@ -145,7 +146,7 @@ int main()
 					fputs("Type the number: ", stdout);
 					std::cin >> std::ws >> sn1;
 					n1 = strtold(sn1.c_str(), NULL);
-					printf("Result: %.*Lf\n", precision, n1 + 273.15L);
+					printf("Result: %.*Lf\n", precision, CELSIUS_TO_KELVIN_L(n1));
 					petc();
 					--loop1;
 				}
@@ -180,7 +181,7 @@ int main()
 					fputs("Type the number: ", stdout);
 					std::cin >> std::ws >> sn1;
 					n1 = strtold(sn1.c_str(), NULL);
-					printf("Result: %.*Lf\n", precision, (n1 - 32.0L) / 1.8L);
+					printf("Result: %.*Lf\n", precision, FAHRENHEIT_TO_CELSIUS_L(n1));
 					petc();
 					--loop1;
 				}
@@ -191,7 +192,7 @@ int main()
 					fputs("Type the number: ", stdout);
 					std::cin >> std::ws >> sn1;
 					n1 = strtold(sn1.c_str(), NULL);
-					printf("Result: %.*Lf\n", precision, (n1 - 32.0L) * 5.0L / 9.0L + 273.15L);
+					printf("Result: %.*Lf\n", precision, FAHRENHEIT_TO_KELVIN_L(n1));
 					petc();
 					--loop1;
 				}
@@ -226,7 +227,7 @@ int main()
 					fputs("Type the number: ", stdout);
 					std::cin >> std::ws >> sn1;
 					n1 = strtold(sn1.c_str(), NULL);
-					printf("Result: %.*Lf\n", precision, n1 - 273.15L);
+					printf("Result: %.*Lf\n", precision, KELVIN_TO_CELSIUS_L(n1));
 					petc();
 					--loop1;
 				}
@@ -237,7 +238,7 @@ int main()
 					fputs("Type the number: ", stdout);
 					std::cin >> std::ws >> sn1;
 					n1 = strtold(sn1.c_str(), NULL);
-					printf("Result: %.*Lf\n", precision, (n1 - 273.15L) * 1.8L + 32.0L);
+					printf("Result: %.*Lf\n", precision, KELVIN_TO_FAHRENHEIT_L(n1));
 					petc();
 					--loop1;
 				}
